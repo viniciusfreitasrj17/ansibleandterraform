@@ -2,8 +2,16 @@
 
 ## Build
 
-`docker build -t viniciusfreitasrj17/ansibleandterraform --no-cache .`
+`docker-compose build`
 
-## Run
+## Access Container Interactive
 
-`docker run --rm -it viniciusfreitasrj17/ansibleandterraform:latest bash`
+`docker-compose run --rm iac`
+
+## Run Terraform Script (Create a bucket on aws)
+
+`docker-compose run --rm iac sh -c "terraform init && terraform apply -auto-approve"`
+
+## DockerHub
+
+`viniciusfreitasrj17/ansibleandterraform:latest`

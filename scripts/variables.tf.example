@@ -1,0 +1,27 @@
+variable "bucket_name" {
+  default = "bucket_name"
+}
+
+variable "acl_value" {
+
+  default = "acl_value"
+
+}
+
+variable "aws_access_key" {
+
+  default = "aws_access_key"
+
+}
+
+variable "aws_secret_key" {
+
+  default = "aws_secret_key"
+
+}
+
+variable "region" {
+
+  default = "region_name"
+
+}

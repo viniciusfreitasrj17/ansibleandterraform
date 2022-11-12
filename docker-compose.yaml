@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  iac:
+    build:
+      context: .
+    volumes:
+      - ./scripts:/app
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
