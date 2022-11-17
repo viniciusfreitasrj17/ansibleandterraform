@@ -1,0 +1,15 @@
+- name: basic upload
+  hosts: localhost
+  connection: local
+  vars_files:
+    - env-ansible.yaml
+  tasks:
+  - name: upload to s3
+    amazon.aws.aws_s3:
+      aws_access_key: "{{aws_access_key}}"
+      aws_secret_key: "{{aws_secret_key}}"
+      bucket: "{{bucket}}"
+      src: "{{src}}"
+      region: "{{region}}"
+      object: "{{object}}"
+      mode: put

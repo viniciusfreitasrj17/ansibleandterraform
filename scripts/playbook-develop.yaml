@@ -1,0 +1,30 @@
+- hosts: webservers
+  tasks:
+  - name: Install python3, virtualenv and nodejs
+    apt:
+      pkg:
+      - python3
+      - virtualenv
+      - nodejs
+      update_cache: yes
+    become: yes
+  # Example to install depends with pip into venv
+  # - name: Install depends with pip into venv
+  #   pip:
+  #     virtualenv: /home/ubuntu/app/venv
+  #     name:
+  #       - django
+  #       - djangorestframework
+  # Example to init project django into venv
+  # - name: Init project
+  #   shell: '. /home/ubuntu/app/venv/bin/activate; django-admin startproject config /home/ubuntu/app/'
+  # - name: Change hosts in settings.py
+  #   lineinfile:
+  #     path: /home/ubuntu/app/config/settings.py
+  #     regexp: 'ALLOWED_HOSTS'
+  #     line: 'ALLOWED_HOSTS = ["*"]'
+  #     backrefs: yes
+  # Run Project
+  # - name: Init project
+  #   shell: '. /home/ubuntu/app/venv/bin/activate; cd /home/ubuntu/app/; python runserver 0.0.0.0:8080'
+  #   ignore_errors: yes
